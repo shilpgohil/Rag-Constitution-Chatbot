@@ -31,7 +31,7 @@ Run the application using the following command:
 │   ├── chunking.py  #at this section we  innitiate the pipeline by mapping the retrieval document loaction using BeautifulSoaps and assigning the chunk rules using RecursiveCharacterTextSplitter as mentioned below. here the chunk size= 400, chunk overlap=60
 │   ├── embeddings.py  # for a successful chunnking of an document it need to undergo a fine embedding process here in this algorithm the embedding model the we have used is "nomic-emnd-text" which allows us a pretty decent amount of dimensions in the vectore database something around 310 to 312 and the vector database we have used is ChromaDB
 │   ├── retrievals.py  # at this section of the project we are enabeling the chunks to further undergo its destination which further allows retriever to aggregate from the destinatiion and return the retrieve the Top k where k is assigned 3,  so the retriever will pass the most revelent chunk from all the top 3 called chuks
-│   ├── llm.py #here is where the whole brainroot part is setelled up along with the model used to query passed and the subject prompt so the the agent knows what when and how to behave and return the response
+│   ├── llm.py #here is where the whole brainroot part is setelled up along with the model used to query passed and the subject prompt so the the agent knows what when and how to behave and return the response also the llm have the multilingual freedom to underdtand as well as response in hindi
 │   ├── __pychache__/
 │   ├── ├── chunking.cpython-310.pyc 
 ```
