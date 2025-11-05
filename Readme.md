@@ -24,12 +24,12 @@ Run the application using the following command:
     ```
 ## File Structure
 ```
-│── app.py  #Fastapi app
+│── app.py  #Fastapi app along with the /askme endpoint 
 │── main.py  #the main app the retrives the whole pipeline and used mainly for testing
 │── requirements.txt  #here arre the basis dependencies that will help to execute the project successfully
 │── utils/
-│   ├── chunking.py  #at this section we  innitiate the pipeline by mapping the retrieval document loaction and assigning the chunk rules
-│   ├── embeddings.py  # for a successful chunnking of an document it need to undergo a fine embedding process here in this algorithm the embedding model the we have used is "nomic=emnd-text" which allows us a pretty decent amount of dimensions in the vectore database something around 310 to 312 and the vector database we have used is ChromaDB
+│   ├── chunking.py  #at this section we  innitiate the pipeline by mapping the retrieval document loaction using BeautifulSoaps and assigning the chunk rules using RecursiveCharacterTextSplitter as mentioned below. here the chunk size= 400, chunk overlap=60
+│   ├── embeddings.py  # for a successful chunnking of an document it need to undergo a fine embedding process here in this algorithm the embedding model the we have used is "nomic-emnd-text" which allows us a pretty decent amount of dimensions in the vectore database something around 310 to 312 and the vector database we have used is ChromaDB
 │   ├── retrievals.py  # at this section of the project we are enabeling the chunks to further undergo its destination which further allows retriever to aggregate from the destinatiion and return the retrieve the Top k where k is assigned 3,  so the retriever will pass the most revelent chunk from all the top 3 called chuks
 │   ├── llm.py #here is where the whole brainroot part is setelled up along with the model used to query passed and the subject prompt so the the agent knows what when and how to behave and return the response
 │   ├── __pychache__/
@@ -40,3 +40,4 @@ Run the application using the following command:
 * For the above project used Ollama as the LLM:model used is "llama3.2"
 * Along with the temperature as= 0.5 (to keep the llm creative as well as deterministic to the objective) we can also use temperature as 0, 1 or more than 1 but in case of 0 the llm will be bounded and stay sharp to its knowledge base and in terms of assigning parameter 1 or more than 1 it will dive more into generating creative reponses. Therefore to keep the model relatively Converssational as well as smart at its responses i metained the parameter as 0.5
 * The embedding model used here is: "nomic-embed-text" yet it allows a good amount of dimensions with in the vector data
+* For chunking i have used the RecursiceCharacterTextSplitter from langchain TectSplitter which uses the chunking stretergy for first it will chunk paragraph (\n\n), followed by lines (\n), gramatical breaks (,.!etc), than comes words, semi words (tricolour= 'tri','colour') and than try symmentically to immplement self attention in terms or retrievals
