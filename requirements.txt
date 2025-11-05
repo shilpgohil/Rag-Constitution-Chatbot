@@ -1,0 +1,5 @@
+langchain
+Ollama
+Chromadb
+BeautifulSoaps
+fastapi
