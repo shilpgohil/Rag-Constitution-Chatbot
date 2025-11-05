@@ -24,11 +24,11 @@ Run the application using the following command:
     ```
 ## File Structure
 ```
-│── app.py  #Fastapi app along with the /askme endpoint 
+│── app.py  #Fastapi app along with the /askme endpoint also get integrations usiong beautifulsoup4 from the external sources like kesavandanda bharti, menka gandhi etc.,
 │── main.py  #the main app the retrives the whole pipeline and used mainly for testing
 │── requirements.txt  #here arre the basis dependencies that will help to execute the project successfully
 │── utils/
-│   ├── chunking.py  #at this section we  innitiate the pipeline by mapping the retrieval document loaction using beautifulsoup4 also from the external sources like kesavandanda bharti, menka gandhi etc., and assigning the chunk rules using RecursiveCharacterTextSplitter as mentioned below. here the chunk size= 400, chunk overlap=60
+│   ├── chunking.py  #at this section we  innitiate the pipeline by mapping the retrieval document loaction using beautifulsoup4 from the source and assigning the chunk rules using RecursiveCharacterTextSplitter as mentioned below. here the chunk size= 400, chunk overlap=60
 │   ├── embeddings.py  # for a successful chunnking of an document it need to undergo a fine embedding process here in this algorithm the embedding model the we have used is "nomic-emnd-text" which allows us a pretty decent amount of dimensions in the vectore database something around 310 to 312 and the vector database we have used is ChromaDB
 │   ├── retrievals.py  # at this section of the project we are enabeling the chunks to further undergo its destination which further allows retriever to aggregate from the destinatiion and return the retrieve the Top k where k is assigned 3,  so the retriever will pass the most revelent chunk from all the top 3 called chuks
 │   ├── llm.py #here is where the whole brainroobeapart is setelled up along with the model used to query passed and the subject prompt so the the agent knows what when and how to behave and return the response also the llm have the multilingual freedom to underdtand as well as response in hindi
